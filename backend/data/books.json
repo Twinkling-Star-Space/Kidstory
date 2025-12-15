@@ -1,0 +1,46 @@
+[
+  {
+    "id": "e7cb5f33-15aa-46ac-b22b-c6aac3f47377",
+    "title": "The Adventures of Sunny Bunny",
+    "author": "Emma Johnson",
+    "description": "Join Sunny Bunny on his magical adventure through the Enchanted Forest, where he makes new friends and learns about kindness and bravery.",
+    "genre": "animal",
+    "ageGroup": "3-5",
+    "tags": [
+      "bunny",
+      "forest",
+      "friendship",
+      "magic"
+    ],
+    "coverFilename": "sample-cover1.jpg",
+    "pdfFilename": "sample-book1.pdf",
+    "coverUrl": "/api/static/covers/sample-cover1.jpg",
+    "pdfUrl": "/api/static/pdfs/sample-book1.pdf",
+    "views": 1245,
+    "likes": 89,
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": "f894fce6-8db3-4443-8cec-c94d5daa6618",
+    "title": "Counting with Colorful Cats",
+    "author": "Dr. Lisa Wang",
+    "description": "Learn numbers and colors with this interactive story featuring adorable cats in rainbow colors. Perfect for early learners!",
+    "genre": "educational",
+    "ageGroup": "2-4",
+    "tags": [
+      "counting",
+      "colors",
+      "cats",
+      "learning"
+    ],
+    "coverFilename": "sample-cover2.jpg",
+    "pdfFilename": "sample-book2.pdf",
+    "coverUrl": "/api/static/covers/sample-cover2.jpg",
+    "pdfUrl": "/api/static/pdfs/sample-book2.pdf",
+    "views": 892,
+    "likes": 67,
+    "createdAt": "2024-01-10T14:20:00Z",
+    "updatedAt": "2024-01-10T14:20:00Z"
+  }
+]
