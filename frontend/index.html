@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kid's Story World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Kid's Story World</h1>
+            </div>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <i class="fas fa-eye"></i>
+                    <span id="totalViews">0</span> Views
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <span id="totalBooks">0</span> Books
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search stories...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <button class="add-book-btn" onclick="showUploadForm()">
+                <i class="fas fa-plus"></i> Add Book
+            </button>
+        </div>
+    </nav>
+
+    <!-- Genre Filter -->
+    <div class="genre-filter">
+        <button class="genre-btn active" data-genre="all">All Stories</button>
+        <button class="genre-btn" data-genre="fairy">Fairy Tales</button>
+        <button class="genre-btn" data-genre="animal">Animal Stories</button>
+        <button class="genre-btn" data-genre="adventure">Adventure</button>
+        <button class="genre-btn" data-genre="educational">Educational</button>
+        <button class="genre-btn" data-genre="bedtime">Bedtime Stories</button>
+    </div>
+
+    <!-- Books Grid -->
+    <main class="books-grid" id="booksContainer">
+        <!-- Books will be loaded here -->
+    </main>
+
+    <!-- Upload Book Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Story Book</h2>
+                <button class="close-btn" onclick="hideUploadForm()">&times;</button>
+            </div>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="bookTitle">Book Title *</label>
+                    <input type="text" id="bookTitle" required placeholder="Enter book title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="authorName">Author Name *</label>
+                    <input type="text" id="authorName" required placeholder="Enter author name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <textarea id="description" required rows="3" placeholder="Tell us about the story..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="genre">Genre *</label>
+                    <select id="genre" required>
+                        <option value="">Select Genre</option>
+                        <option value="fairy">Fairy Tales</option>
+                        <option value="animal">Animal Stories</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="educational">Educational</option>
+                        <option value="bedtime">Bedtime Stories</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ageGroup">Age Group *</label>
+                    <select id="ageGroup" required>
+                        <option value="">Select Age Group</option>
+                        <option value="2-4">2-4 years</option>
+                        <option value="5-7">5-7 years</option>
+                        <option value="8-10">8-10 years</option>
+                        <option value="all">All Ages</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookCover">Book Cover Image *</label>
+                    <input type="file" id="bookCover" accept="image/*" required>
+                    <small>This will be displayed as wallpaper/card background</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pdfFile">PDF File *</label>
+                    <input type="file" id="pdfFile" accept=".pdf" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" onclick="hideUploadForm()">Cancel</button>
+                    <button type="submit" class="submit-btn">Upload Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div class="modal" id="feedbackModal">
+        <div class="modal-content feedback-content">
+            <div class="modal-header">
+                <h2>How did you like the story?</h2>
+                <button class="close-btn" onclick="hideFeedbackModal()">&times;</button>
+            </div>
+            <div class="feedback-form">
+                <div class="star-rating">
+                    <i class="fas fa-star" data-rating="1"></i>
+                    <i class="fas fa-star" data-rating="2"></i>
+                    <i class="fas fa-star" data-rating="3"></i>
+                    <i class="fas fa-star" data-rating="4"></i>
+                    <i class="fas fa-star" data-rating="5"></i>
+                </div>
+                <div class="selected-rating">
+                    Rating: <span id="ratingValue">0</span>/5
+                </div>
+                <textarea id="feedbackText" placeholder="What did you like about the story? (Optional)" rows="3"></textarea>
+                <button class="submit-feedback-btn" onclick="submitFeedback()">Submit Feedback</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
